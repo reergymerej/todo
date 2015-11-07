@@ -1,6 +1,8 @@
-# todo package
+# todo
 
-a package for finding TODO statements in your project
+a package for finding TODO statements in your Atom project
 
-Use <kbd>ctrl-k ctrl-t</kbd> to toggle a panel displaying all the **TODO** items
-in your project.
+![A screenshot of your package](https://raw.githubusercontent.com/reergymerej/todo/master/resources/todo-preview.png)
+
+Use <kbd>ctrl-k ctrl-t</kbd> to toggle a list of the **TODO** items
+in your project.  Click the item to jump to the source.
