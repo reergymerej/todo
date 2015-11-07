@@ -2,13 +2,13 @@
   "name": "todo",
   "main": "./lib/todo",
   "version": "0.0.0",
-  "description": "A short description of your package",
+  "description": "a package for finding TODO statements in your project",
   "keywords": [
   ],
   "activationCommands": {
     "atom-workspace": "todo:toggle"
   },
-  "repository": "https://github.com/atom/todo",
+  "repository": "https://github.com/reergymerej/todo",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
