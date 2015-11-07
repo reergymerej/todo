@@ -1,0 +1,22 @@
+# See https://atom.io/docs/latest/hacking-atom-package-word-count#menus for more details
+'context-menu':
+  'atom-text-editor': [
+    {
+      'label': 'Toggle todo'
+      'command': 'todo:toggle'
+    }
+  ]
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'todo'
+      'submenu': [
+        {
+          'label': 'Toggle'
+          'command': 'todo:toggle'
+        }
+      ]
+    ]
+  }
+]
