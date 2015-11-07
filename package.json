@@ -1,10 +1,9 @@
 {
   "name": "todo",
   "main": "./lib/todo",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "a package for finding TODO statements in your project",
-  "keywords": [
-  ],
+  "keywords": [],
   "activationCommands": {
     "atom-workspace": "todo:toggle"
   },
@@ -13,6 +12,5 @@
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
