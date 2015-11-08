@@ -7,10 +7,14 @@ describe "Todo", ->
   beforeEach ->
     workspaceElement = atom.views.getView(atom.workspace)
     activationPromise = atom.packages.activatePackage('todo')
-    helper.createFile 'foo/bar/foo.txt', []
+    helper.createFile 'foo/bar/foo.txt', [{
+      row: 3
+      column: 10
+      text: 'TODO: this is a very important statement'
+      }]
 
   afterEach ->
-    helper.removeFiles()
+    # helper.removeFiles()
 
   describe "when the todo:toggle event is triggered", ->
 
@@ -36,3 +40,23 @@ describe "Todo", ->
 
         atom.commands.dispatch workspaceElement, 'todo:toggle'
         expect(todoElement).not.toBeVisible()
+
+  fdescribe 'when searching for todo statements', ->
+    beforeEach ->
+      helper.createFile 'foo.txt', [{
+        row: 3
+        column: 10
+        text: 'TODO: this is a very important statement'
+        }]
+
+      helper.createFile 'node_modules/not-me.txt', [{
+        row: 3
+        column: 10
+        text: 'TODO: this is a very important statement'
+        }]
+
+    afterEach ->
+      # helper.removeFiles()
+
+    it 'should omit node_modules', ->
+      expect(true).toBe(false)

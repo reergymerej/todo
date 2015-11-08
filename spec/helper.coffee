@@ -1,28 +1,48 @@
 path = require 'path'
 fs = require 'fs'
 mkdirp = require 'mkdirp'
-
+NEWLINE = require('os').EOL
 
 createdFiles = []
 
+# TODO: split this out into its own node module
 module.exports =
 
   # todos[] { row, column, text }
   createFile: (filePath, todos) ->
 
     filePath = path.join __dirname, filePath
-
-    # TODO: create dirs
     dirname = path.dirname filePath
 
-    mkdirp dirname, (err) ->
+    mkdirp dirname, (err) =>
       if err
         throw err
 
       # TODO: generate dummy content, insert todos
-      fs.writeFileSync filePath, 'dummy content'
+      fs.writeFileSync filePath, @getDummyContent(todos)
       createdFiles.push filePath
 
   removeFiles: () ->
     # TODO: remove created dirs
     fs.unlink file for file in createdFiles
+
+  getDummyContent: (todos) ->
+
+    content = ''
+
+    for todo in todos
+      rows = content.split NEWLINE
+
+      # put in on the line
+      while rows.length <= todo.row
+        rows.push ''
+
+      todoRow = rows[todo.row]
+      while todoRow.length < todo.column
+        todoRow += ' '
+
+      rows[todo.row] = todoRow.slice(0, todo.column) + todo.text + todoRow.slice(todo.column + 1)
+
+      content = rows.join NEWLINE
+
+    return content
