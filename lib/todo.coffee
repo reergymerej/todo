@@ -28,6 +28,7 @@ module.exports = Todo =
     # Register command that toggles this view
     @subscriptions.add atom.commands.add 'atom-workspace', 'todo:toggle': => @toggle()
 
+    # TODO: don't use the global events, just add a listener to the view
     atom.emitter.on 'todo:refresh', @loadItems.bind this
 
   deactivate: ->
@@ -42,8 +43,9 @@ module.exports = Todo =
     if @panel.isVisible()
       @panel.hide()
     else
-      @loadItems().then(() =>
+      return @loadItems().then(() =>
         @panel.show()
+        atom.emitter.emit 'todo:show'
       )
 
   loadItems: () ->
