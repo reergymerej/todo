@@ -1,4 +1,5 @@
 Todo = require '../lib/todo'
+helper = require './helper'
 
 describe "Todo", ->
   [workspaceElement, activationPromise, todoElement] = []
@@ -6,6 +7,10 @@ describe "Todo", ->
   beforeEach ->
     workspaceElement = atom.views.getView(atom.workspace)
     activationPromise = atom.packages.activatePackage('todo')
+    helper.createFile 'foo/bar/foo.txt', []
+
+  afterEach ->
+    helper.removeFiles()
 
   describe "when the todo:toggle event is triggered", ->
 
