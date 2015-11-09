@@ -24,7 +24,7 @@ module.exports =
 
   removeFiles: () ->
     # TODO: remove created dirs
-    fs.unlink file for file in createdFiles
+    fs.unlinkSync file for file in createdFiles
 
   getDummyContent: (todos) ->
 

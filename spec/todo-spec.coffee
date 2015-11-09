@@ -41,22 +41,31 @@ describe "Todo", ->
         atom.commands.dispatch workspaceElement, 'todo:toggle'
         expect(todoElement).not.toBeVisible()
 
-  fdescribe 'when searching for todo statements', ->
-    beforeEach ->
-      helper.createFile 'foo.txt', [{
+fdescribe 'when searching for todo statements', ->
+  beforeEach ->
+    helper.createFile 'foo.txt', [
+      {
         row: 3
         column: 10
         text: 'TODO: this is a very important statement'
-        }]
+      },
 
-      helper.createFile 'node_modules/not-me.txt', [{
-        row: 3
-        column: 10
-        text: 'TODO: this is a very important statement'
-        }]
+      {
+        row: 12
+        column: 3
+        text: 'TODO: this is also a very important statement'
+      }
+    ]
 
-    afterEach ->
-      # helper.removeFiles()
+    helper.createFile 'node_modules/not-me.txt', [
+      row: 0
+      column: 0
+      text: 'TODO: this should not be found'
+    ]
 
-    it 'should omit node_modules', ->
-      expect(true).toBe(false)
+  afterEach ->
+    helper.removeFiles()
+
+  it 'should omit node_modules', ->
+    resultsCount
+    expect(resultsCount).toBe(2)
