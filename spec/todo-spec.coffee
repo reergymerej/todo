@@ -1,7 +1,8 @@
 Todo = require '../lib/todo'
 helper = require './helper'
+service = require '../lib/service';
 
-describe "Todo", ->
+xdescribe "Todo", ->
   [workspaceElement, activationPromise, todoElement] = []
 
   beforeEach ->
@@ -41,7 +42,7 @@ describe "Todo", ->
         atom.commands.dispatch workspaceElement, 'todo:toggle'
         expect(todoElement).not.toBeVisible()
 
-fdescribe 'when searching for todo statements', ->
+xdescribe 'when searching for todo statements', ->
   beforeEach ->
     helper.createFile 'foo.txt', [
       {
@@ -67,5 +68,10 @@ fdescribe 'when searching for todo statements', ->
     helper.removeFiles()
 
   it 'should omit node_modules', ->
-    resultsCount
-    expect(resultsCount).toBe(2)
+    items = []
+
+    waitsForPromise ->
+      service.findTodoItems().then((todoItems) -> items = todoItems)
+
+    runs ->
+      expect(resultsCount).toBe(2)
