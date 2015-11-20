@@ -14,7 +14,11 @@ module.exports = Todo =
     flags:
       type: 'string'
       default: 'g'
-
+    ignorePaths:
+      type: 'array'
+      default: []
+      items:
+        type: 'string'
 
   # TODO: refactor all of this so it's not so silly
 
