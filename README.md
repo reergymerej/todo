@@ -14,6 +14,6 @@ in your project.  Click the item to jump to the source.
 
 <!-- TODO: document these config options  -->
 <!-- TODO: figure out how other packages do config  -->
-pattern - regex used to find **TODO**  items
+pattern - regex used to find **TODO**  items  
 flags - 2nd param for RegExp construction  
 ignorePaths - see [scan](https://atom.io/docs/api/v1.1.0/Workspace#instance-scan)

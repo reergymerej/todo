@@ -47,13 +47,11 @@ class TodoView
     # TODO: make this less rigid, so it can work on single files
     todoSection.textContent = item.filePath
     todoSection.classList.add 'text-subtle'
-    # TODO: add click handler to open file
     return todoSection
 
   addTodoText: (todoMatch, item) ->
     me = this
     todoText = document.createElement 'todo-text'
-    # TODO: add line:column
     todoText.textContent = todoMatch.matchText
     todoText.addEventListener 'click', () ->
       me.onItemClick todoMatch, item
