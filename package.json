@@ -3,7 +3,11 @@
   "main": "./lib/todo",
   "version": "0.2.0",
   "description": "a package for finding TODO statements in your project",
-  "keywords": [],
+  "keywords": [
+    "todo",
+    "to-do",
+    "to do"
+  ],
   "activationCommands": {
     "atom-workspace": "todo:toggle"
   },
