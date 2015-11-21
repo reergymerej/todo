@@ -9,7 +9,7 @@ Use <kbd>ctrl-k ctrl-t</kbd> to toggle a list of the **TODO** items in your proj
 
 ## config
 
-To configure options, open *Settings View*, select *Packages*, find the "todo" package, and click *Settings*.
+To configure options, open *Settings View: View Installed Packages*, find the "todo" package, and click *Settings*.
 
 * exclude directories (.gitignore directories are ignored automatically)
 * customize RegExp used to find items
