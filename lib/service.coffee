@@ -7,12 +7,10 @@ module.exports =
     iterator = (result) ->
       results.push result
 
-    # TODO: make the regex match multiple lines
-
-    pattern = atom.config.get('todo.pattern')
-    flags = atom.config.get('todo.flags')
+    pattern = atom.config.get('todo.a_pattern')
+    flags = atom.config.get('todo.b_flagss')
     regex = new RegExp pattern, flags
-    notIgnoredPaths = atom.config.get('todo.ignorePaths').map((path) -> '!' + path)
+    notIgnoredPaths = atom.config.get('todo.c_ignorePaths').map((path) -> '!' + path)
 
     options =
       paths: if notIgnoredPaths.length then notIgnoredPaths else ['*']

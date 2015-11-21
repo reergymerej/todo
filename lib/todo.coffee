@@ -8,13 +8,18 @@ module.exports = Todo =
   subscriptions: null
 
   config:
-    pattern:
+    a_pattern:
+      title: 'RegExp Pattern'
+      description: 'used in conjunction with RegExp Flags to find todo items in your code'
       type: 'string'
       default: 'TODO\\:.+'
-    flags:
+    b_flags:
+      title: 'RegExp Flags'
       type: 'string'
       default: 'g'
-    ignorePaths:
+    c_ignorePaths:
+      title: 'Ignored Paths'
+      description: 'comma-separated [globs](https://github.com/isaacs/node-glob#glob-primer) that should not be searched (ex: \\*\\*/ignore-me/\\*\\*, \\*\\*/and-me/\\*\\*)'
       type: 'array'
       default: []
       items:
