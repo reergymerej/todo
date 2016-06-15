@@ -59,10 +59,14 @@ class TodoView
     return todoText
 
   onItemClick: (item, section) ->
-    atom.workspace.open section.filePath, {
-      initialLine: item.range[0][0]
-      initialColumn: item.range[0][1]
-    }
+    range = item.range && item.range[0]
+    if range
+      initialLine = range[0]
+      initialColumn = range[1]
+      atom.workspace.open section.filePath, {
+        initialLine
+        initialColumn
+      }
 
   # Returns an object that can be retrieved when package is activated
   serialize: ->
