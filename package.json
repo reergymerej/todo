@@ -17,6 +17,9 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
-    "mkdirp": "^0.5.1"
+    "babel-preset-react": "^6.5.0",
+    "mkdirp": "^0.5.1",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0"
   }
 }
