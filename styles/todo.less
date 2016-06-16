@@ -5,31 +5,26 @@
 @import "ui-variables";
 
 todo {
-  display: flex;
-  flex-direction: column;
-  max-height: 100%;
+  max-width: 400px;
+  overflow-y: scroll;
 
-  h1 {
-    margin: 1rem;
-  }
+  .list {
+    .list-item {
+      margin-bottom: 10px;
 
-  item-container {
-    padding: 1rem;
-    overflow-y: scroll;
-  }
+      .filepath {
+        color: @text-color-subtle;
+      }
 
-  todo-item, todo-section, todo-text {
-    display: block;
-  }
+      .todo-text {
+        color: @text-color;
+        margin: 5px 0 5px 5px;
 
-  todo-item {
-    margin-bottom: 0.4em;
-
-    todo-section {}
-
-    todo-text {
-      margin-left: 0.4em;
-      cursor: pointer;
+        &:hover {
+          cursor: pointer;
+          color: @text-color-highlight;
+        }
+      }
     }
   }
 }
