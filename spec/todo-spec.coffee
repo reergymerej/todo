@@ -11,7 +11,7 @@ xdescribe "Todo", ->
     helper.createFile 'foo/bar/foo.txt', [{
       row: 3
       column: 10
-      text: 'TODO: this is a very important statement'
+      text: 'TODOS: this is a very important statement'
       }]
 
   afterEach ->
@@ -28,7 +28,7 @@ xdescribe "Todo", ->
           activationPromise,
 
           # additional promise so we can wait for the search to complete
-          # TODO: find an elegant way to wait for the element to show up
+          # TODOS: find an elegant way to wait for the element to show up
           new Promise((resolve) ->
             atom.emitter.on 'todo:show', resolve
           )
@@ -48,20 +48,20 @@ xdescribe 'when searching for todo statements', ->
       {
         row: 3
         column: 10
-        text: 'TODO: this is a very important statement'
+        text: 'TODOS: this is a very important statement'
       },
 
       {
         row: 12
         column: 3
-        text: 'TODO: this is also a very important statement'
+        text: 'TODOS: this is also a very important statement'
       }
     ]
 
     helper.createFile 'node_modules/not-me.txt', [
       row: 0
       column: 0
-      text: 'TODO: this should not be found'
+      text: 'TODOS: this should not be found'
     ]
 
   afterEach ->
