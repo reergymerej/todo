@@ -1,7 +1,7 @@
 {
   "name": "todo",
   "main": "./lib/todo",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "a package for finding TODO statements in your project",
   "keywords": [
     "todo",
