@@ -5,23 +5,28 @@
 @import "ui-variables";
 
 todo {
-  max-width: 400px;
+  width: 400px;
   overflow-y: scroll;
 
-  .panel-heading {
+  .header {
     display: flex;
-    padding: 10px 10px 5px 10px;
-    margin-bottom: 5px;
+    justify-content: flex-end;
 
     h1 {
+      display: flex;
       flex: 1;
       margin: 0;
       padding: 0;
     }
 
     .controls {
-      margin-top: 10px;
+      padding: 0;
+      margin: 0;
     }
+  }
+
+  .loading {
+    margin: auto;
   }
 
   .list {

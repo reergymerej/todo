@@ -5,7 +5,7 @@ NEWLINE = require('os').EOL
 
 createdFiles = []
 
-# TODO: split this out into its own node module
+# TODOS: split this out into its own node module
 module.exports =
 
   # todos[] { row, column, text }
@@ -18,12 +18,12 @@ module.exports =
       if err
         throw err
 
-      # TODO: generate dummy content, insert todos
+      # TODOS: generate dummy content, insert todos
       fs.writeFileSync filePath, @getDummyContent(todos)
       createdFiles.push filePath
 
   removeFiles: () ->
-    # TODO: remove created dirs
+    # TODOS: remove created dirs
     fs.unlinkSync file for file in createdFiles
 
   getDummyContent: (todos) ->
