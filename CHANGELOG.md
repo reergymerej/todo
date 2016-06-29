@@ -6,6 +6,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 * Search field in results list
 
+### Changed
+* Display results in a tree
+
 ## 0.5.0 - React
 * Switched to React for view rendering
 * Switched to ES6 instead of CoffeeScript

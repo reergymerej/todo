@@ -14,3 +14,9 @@ To configure options, open *Settings View: View Installed Packages*, find the "t
 
 * exclude directories (.gitignore directories are ignored automatically)
 * customize RegExp used to find items
+
+## Changes
+
+Check out the [change log][changelog] for details about each version.
+
+[changelog]: ./CHANGELOG.md
