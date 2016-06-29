@@ -101,7 +101,6 @@ describe('<TreeNode />', () => {
       it('should have the proper className when collapsed', () => {
         const wrapper = shallow(factory({
           path: 'withchildren',
-          collapsed: true,
           nodes: [
             {
               path: 'quux',
@@ -109,6 +108,7 @@ describe('<TreeNode />', () => {
             },
           ],
         }));
+        wrapper.setState({ collapsed: true });
         expect(wrapper.prop('className')).to.equal('list-nested-item collapsed');
       });
     });
