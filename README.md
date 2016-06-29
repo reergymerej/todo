@@ -1,6 +1,6 @@
 # todo
 
-a package for finding TODO statements in your Atom project
+an Atom package for finding TODO statements
 
 [![Build Status](https://travis-ci.org/reergymerej/todo.svg?branch=tests)](https://travis-ci.org/reergymerej/todo)
 
