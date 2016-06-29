@@ -13,3 +13,8 @@ To configure options, open *Settings View: View Installed Packages*, find the "t
 
 * exclude directories (.gitignore directories are ignored automatically)
 * customize RegExp used to find items
+
+
+## Contributing
+
+lint please with `npm run lint`
