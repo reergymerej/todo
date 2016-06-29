@@ -40,7 +40,7 @@ function factory(props) {
 }
 
 describe('<TreeNode />', () => {
-  it('should display the path', () => {
+  it('should display the text', () => {
     const node = {
       path: 'a tree node',
       text: 'a tree node',
@@ -49,6 +49,18 @@ describe('<TreeNode />', () => {
     const wrapper = shallow(factory(node));
     const item = wrapper.find('.list-item');
     expect(item.find('span').prop('children')).to.equal(node.text);
+  });
+
+  it('should display the icon', () => {
+    const node = {
+      path: 'a tree node',
+      text: 'a tree node',
+      icon: 'icon-big-horse',
+      nodes: [],
+    };
+    const wrapper = shallow(factory(node));
+    const item = wrapper.find('.list-item');
+    expect(item.find('span').prop('className')).to.equal(`icon ${node.icon}`);
   });
 
   describe('no child nodes', () => {
@@ -98,14 +110,6 @@ describe('<TreeNode />', () => {
           ],
         }));
         expect(wrapper.prop('className')).to.equal('list-nested-item collapsed');
-      });
-    });
-
-    describe('this node\'s element', () => {
-      it('should show a directory', () => {
-        const wrapper = shallow(factory());
-        const item = wrapper.find('.list-item');
-        expect(item.find('span').prop('className')).to.equal('icon icon-file-directory');
       });
     });
 
