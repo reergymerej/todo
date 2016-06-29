@@ -12,5 +12,12 @@
     "ecmaFeatures": {
       "jsx": true
     }
+  },
+  "globals": {
+    "atom": true,
+    "document": true
+  },
+  "rules": {
+    "comma-dangle": [2, "always-multiline"]
   }
 }
