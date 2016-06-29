@@ -18,7 +18,7 @@ function factory(props) {
   );
 }
 
-describe.only('<Header />', () => {
+describe('<Header />', () => {
   describe('<Controls />', () => {
     it('should use `props.onRefresh`', () => {
       const onRefresh = function () {};
@@ -27,11 +27,11 @@ describe.only('<Header />', () => {
       expect(onRefresh).to.equal(controls.prop('onRefresh'));
     });
 
-    it('should use `props.onRefresh`', () => {
-      const onRefresh = function () {};
-      const wrapper = shallow(factory({ onRefresh }));
+    it('should use `props.onClose`', () => {
+      const onClose = function () {};
+      const wrapper = shallow(factory({ onClose }));
       const controls = wrapper.find('Controls');
-      expect(onRefresh).to.equal(controls.prop('onRefresh'));
+      expect(onClose).to.equal(controls.prop('onClose'));
     });
   });
 });
