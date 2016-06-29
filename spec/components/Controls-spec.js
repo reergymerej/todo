@@ -2,7 +2,7 @@
 
 import React from 'react';
 import {shallow} from 'enzyme';
-import chai, {expect} from 'chai';
+import chai from 'chai';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 import Controls from '../../lib/components/Controls';

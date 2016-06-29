@@ -13,6 +13,9 @@
       "jsx": true
     }
   },
+  "env": {
+    "es6": true
+  },
   "globals": {
     "atom": true,
     "document": true

@@ -3,12 +3,9 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 import chai, {expect} from 'chai';
-import sinon from 'sinon';
-import sinonChai from 'sinon-chai';
 import Header from '../../lib/components/Header';
 
 chai.should();
-chai.use(sinonChai);
 
 function factory(props) {
   function noop() {}
