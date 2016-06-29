@@ -2,7 +2,7 @@
 
 a package for finding TODO statements in your Atom project
 
-[![Build Status](https://travis-ci.org/reergymerej/todo.svg?branch=master)](https://travis-ci.org/reergymerej/todo)
+[![Build Status](https://travis-ci.org/reergymerej/todo.svg?branch=tests)](https://travis-ci.org/reergymerej/todo)
 
 ![todo](https://raw.githubusercontent.com/reergymerej/todo/master/resources/todo-preview.png)
 
