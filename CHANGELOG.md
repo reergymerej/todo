@@ -1,3 +1,11 @@
+# Change Log
+All notable changes to this project will be documented in this file.
+This project adheres to [Semantic Versioning](http://semver.org/).
+
+## [Unreleased]
+### Added
+* Search field in results list
+
 ## 0.5.0 - React
 * Switched to React for view rendering
 * Switched to ES6 instead of CoffeeScript
