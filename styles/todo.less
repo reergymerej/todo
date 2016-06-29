@@ -29,7 +29,24 @@ todo {
   .search {
       background-color: @input-background-color;
       border-color: @input-border-color;
+      border: 0;
       width: 100%;
+      padding: 0.5em;
+  }
+
+  ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+      color: @text-color-subtle;
+  }
+  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+      color: @text-color-subtle;
+      opacity:  1;
+  }
+  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+      color: @text-color-subtle;
+      opacity:  1;
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+      color: @text-color-subtle;
   }
 
   .status {
