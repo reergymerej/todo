@@ -9,16 +9,20 @@ chai.should();
 
 const node = {
   path: 'foo',
+  text: 'foo',
   nodes: [
     {
       path: 'bar',
+      text: 'bar',
       nodes: [],
     },
     {
       path: 'baz',
+      text: 'baz',
       nodes: [
         {
           path: 'quux',
+          text: 'quux',
           nodes: [],
         },
       ],
@@ -39,11 +43,12 @@ describe('<TreeNode />', () => {
   it('should display the path', () => {
     const node = {
       path: 'a tree node',
+      text: 'a tree node',
       nodes: [],
     };
     const wrapper = shallow(factory(node));
     const item = wrapper.find('.list-item');
-    expect(item.find('span').prop('children')).to.equal(node.path);
+    expect(item.find('span').prop('children')).to.equal(node.text);
   });
 
   describe('no child nodes', () => {

@@ -101,10 +101,10 @@ describe('<Container />', () => {
                 },
             ];
 
-            // TODO: Keep the unit testing for getFilteredItems, but
+            // TODO?: Keep the unit testing for getFilteredItems, but
             // also test that List is getting the filtered props.
 
-            // TODO: Test case sensitivity
+            // TODO?: Test case sensitivity
 
             const filtered = items.slice(0, 1);
             filtered[0].matches.pop();
