@@ -3,9 +3,12 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 import chai, {expect} from 'chai';
+import sinon from 'sinon';
+import sinonChai from 'sinon-chai';
 import Tree from '../../lib/components/Tree';
 
 chai.should();
+chai.use(sinonChai);
 
 /*
 * TreeNode
@@ -53,5 +56,16 @@ describe('<Tree />', () => {
     const wrapper = shallow(factory());
     const nodes = wrapper.children('TreeNode');
     expect(nodes.length).to.equal(root.nodes.length);
+  });
+
+  it('should call onNodeClick when node is clicked', () => {
+    const spy = sinon.spy();
+    const data = { foo: 'bar' };
+    const wrapper = shallow(factory({
+      onNodeClick: spy,
+    }));
+    const nodes = wrapper.children('TreeNode');
+    nodes.at(0).simulate('click', data);
+    spy.should.have.been.calledWith(data);
   });
 });

@@ -86,6 +86,20 @@ describe('<TreeNode />', () => {
         expect(wrapper.find('Tree').length).to.equal(0);
       });
     });
+
+    describe('clicking the node', () => {
+      it('should trigger the `onClick` prop', () => {
+        const spy = sinon.spy();
+        const data = { foo: 'bar' };
+        const wrapper = shallow(factory({
+          nodes: [],
+          onClick: spy,
+          data,
+        }));
+        wrapper.simulate('click', { stopPropagation() {} });
+        spy.should.have.been.calledWith(data);
+      });
+    });
   });
 
   describe('with child nodes', () => {
@@ -116,19 +130,6 @@ describe('<TreeNode />', () => {
         const tree = wrapper.find('Tree');
         expect(tree.length).to.equal(1);
       });
-    });
-  });
-
-  describe('clicking the node', () => {
-    it('should trigger the `onClick` prop', () => {
-      const spy = sinon.spy();
-      const data = { foo: 'bar' };
-      const wrapper = shallow(factory({
-        onClick: spy,
-        data,
-      }));
-      wrapper.simulate('click', { stopPropagation() {} });
-      spy.should.have.been.calledWith(data);
     });
   });
 });
