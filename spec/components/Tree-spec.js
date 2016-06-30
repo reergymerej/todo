@@ -9,30 +9,31 @@ chai.should();
 
 /*
 * TreeNode
-* {String} path
+* {String} text
+* {String} icon
+* {Object} data
 * {Node[]} nodes
 * {Boolean} collapsed
 *
 */
 
 const root = {
-  path: '/',
   nodes: [
     {
-      path: 'foo',
+      text: 'foo',
       nodes: [
         {
-          path: 'bar',
+          text: 'bar',
           nodes: [],
         },
         {
-          path: 'baz',
+          text: 'baz',
           nodes: [],
         },
       ],
     },
     {
-      path: 'quuz',
+      text: 'quuz',
       nodes: [],
     },
   ],

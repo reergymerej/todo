@@ -11,20 +11,16 @@ chai.should();
 chai.use(sinonChai);
 
 const node = {
-  path: 'foo',
   text: 'foo',
   nodes: [
     {
-      path: 'bar',
       text: 'bar',
       nodes: [],
     },
     {
-      path: 'baz',
       text: 'baz',
       nodes: [
         {
-          path: 'quux',
           text: 'quux',
           nodes: [],
         },
@@ -45,7 +41,6 @@ function factory(props) {
 describe('<TreeNode />', () => {
   it('should display the text', () => {
     const node = {
-      path: 'a tree node',
       text: 'a tree node',
       nodes: [],
     };
@@ -56,7 +51,6 @@ describe('<TreeNode />', () => {
 
   it('should display the icon', () => {
     const node = {
-      path: 'a tree node',
       text: 'a tree node',
       icon: 'icon-big-horse',
       nodes: [],
@@ -103,10 +97,10 @@ describe('<TreeNode />', () => {
 
       it('should have the proper className when collapsed', () => {
         const wrapper = shallow(factory({
-          path: 'withchildren',
+          text: 'withchildren',
           nodes: [
             {
-              path: 'quux',
+              text: 'quux',
               nodes: [],
             },
           ],
