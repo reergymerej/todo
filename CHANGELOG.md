@@ -3,6 +3,8 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Fixed
+* #26: sort dirs before files in tree
 
 ## 0.6.0 - Tree
 ### Added

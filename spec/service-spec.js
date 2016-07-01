@@ -13,4 +13,48 @@ describe('service', () => {
 
     expect(output).to.eql(expected);
   });
+
+  it('should put directories before files', () => {
+    const input = [
+      {
+        filePath: '/fileInRoot.js',
+        matches: [],
+        relativePath: 'fileInRoot.js',
+      },
+
+      {
+        filePath: '/foo/fileInDir.js',
+        matches: [],
+        relativePath: 'foo/fileInDir.js',
+      },
+    ];
+
+    const expected = {
+      path: '/',
+      nodes: [
+        {
+          path: 'foo',
+          text: 'foo',
+          icon: 'icon-file-directory',
+          nodes: [
+            {
+              path: 'fileInDir.js',
+              text: 'fileInDir.js',
+              icon: 'icon-file-text',
+              nodes: [],
+            },
+          ],
+        },
+        {
+          path: 'fileInRoot.js',
+          text: 'fileInRoot.js',
+          icon: 'icon-file-text',
+          nodes: [],
+        },
+      ],
+    };
+
+    const output = service.getTreeFormat(input);
+    expect(output).to.eql(expected);
+  });
 });
